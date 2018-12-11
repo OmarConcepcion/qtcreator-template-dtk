@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     DApplication a(argc, argv);
 
     DMainWindow w;
+    w.setMinimumSize(500, 500);
     w.show();
 
     return a.exec();
