@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "supportedProjectTypes": [ "CMakeProjectManager.CMakeProject", "Qbs.QbsProject", "Qt4ProjectManager.Qt4Project" ],
+    "supportedProjectTypes": [ "CMakeProjectManager.CMakeProject", "Qt4ProjectManager.Qt4Project" ],
     "id": "Deepin DTK Application",
     "category": "F.Application",
     "trDescription": "Create a simple DTK template.",
@@ -11,7 +11,7 @@
 
     "options":
     [
-        { "key": "ProjectFile", "value": "%{JS: '%{BuildSystem}' === 'qmake' ? '%{ProFile}' : ('%{BuildSystem}' === 'cmake' ? '%{CMakeFile}' : '%{QbsFile}')}" },
+        { "key": "ProjectFile", "value": "%{JS: '%{BuildSystem}' === 'qmake' ? '%{ProFile}' : '%{CMakeFile}'}"},
         { "key": "ProFile", "value": "%{JS: Util.fileName('%{ProjectDirectory}/%{ProjectName}', 'pro')}" },
         { "key": "QbsFile", "value": "%{JS: Util.fileName('%{ProjectDirectory}/%{ProjectName}', 'qbs')}" },
         { "key": "CMakeFile", "value": "%{ProjectDirectory}/CMakeLists.txt" },
@@ -50,11 +50,6 @@
                                 "trKey": "CMake",
                                 "value": "cmake",
                                 "condition": "%{JS: [ %{Plugins} ].indexOf('CMakeProjectManager') >= 0}"
-                            },
-                            {
-                                "trKey": "Qbs",
-                                "value": "qbs",
-                                "condition": "%{JS: [ %{Plugins} ].indexOf('QbsProjectManager') >= 0}"
                             }
                         ]
                     }
@@ -96,12 +91,6 @@
                 },
                 {
                     "source": "images/logo.svg"
-                },
-                {
-                    "source": "file.qbs",
-                    "target": "%{QbsFile}",
-                    "openAsProject": true,
-                    "condition": "%{JS: '%{BuildSystem}' === 'qbs'}"
                 },
                 {
                     "source": "main.cpp",
