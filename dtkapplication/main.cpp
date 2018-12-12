@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     a.setOrganizationName("deepin");
     a.setApplicationName("dtk application");
     a.setApplicationVersion("1.0");
+    a.setProductIcon(QIcon(":/images/logo.svg"));
     a.setProductName("Dtk Application");
     a.setApplicationDescription("This is a dtk template application.");
 

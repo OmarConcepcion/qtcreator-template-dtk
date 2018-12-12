@@ -9,3 +9,6 @@ PKGCONFIG += dtkwidget
 
 SOURCES += \\
         %{CppFileName}
+
+RESOURCES += \
+        resources.qrc

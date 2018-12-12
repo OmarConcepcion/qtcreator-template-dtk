@@ -92,6 +92,12 @@
                     "condition": "%{JS: '%{BuildSystem}' === 'cmake'}"
                 },
                 {
+                    "source": "resources.qrc"
+                },
+                {
+                    "source": "images/logo.svg"
+                },
+                {
                     "source": "file.qbs",
                     "target": "%{QbsFile}",
                     "openAsProject": true,
