@@ -13,7 +13,7 @@ find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(DtkWidget REQUIRED)
 
-add_executable(${PROJECT_NAME} "%{CppFileName}")
+add_executable(${PROJECT_NAME} "%{CppFileName}" resources.qrc)
 
 target_include_directories(%{ProjectName} PUBLIC ${DtkWidget_INCLUDE_DIRS} ${OBJECT_BINARY_DIR})
 target_link_libraries(%{ProjectName}
